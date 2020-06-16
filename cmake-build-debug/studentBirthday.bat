@@ -1,4 +1,4 @@
 @echo off
 chcp 65001
-studentBirthday.exe "D:\Users\Administrator\source\CLionProjects\studentBirthday\sample.txt"
+StudentBirthday.exe "D:\Users\Administrator\source\CLionProjects\StudentBirthday\sample.txt"
 pause
