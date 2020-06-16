@@ -2,8 +2,8 @@
 // Created by Administrator on 2020/6/15.
 //
 
-#ifndef HW03_LIST_H
-#define HW03_LIST_H
+#ifndef STUDENTBIRTHDAY_LIST_H
+#define STUDENTBIRTHDAY_LIST_H
 
 #include "ListNode.h"
 
@@ -150,4 +150,4 @@ List<T> &List<T>::operator=(List list) {
 template<typename T>
 List<T>::~List() = default;
 
-#endif //HW03_LIST_H
+#endif //STUDENTBIRTHDAY_LIST_H

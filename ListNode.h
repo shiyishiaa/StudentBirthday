@@ -2,8 +2,8 @@
 // Created by Administrator on 2020/6/15.
 //
 
-#ifndef HW03_LISTNODE_H
-#define HW03_LISTNODE_H
+#ifndef STUDENTBIRTHDAY_LISTNODE_H
+#define STUDENTBIRTHDAY_LISTNODE_H
 
 template<typename T>
 class ListNode {
@@ -64,4 +64,4 @@ ListNode<T>::ListNode() {
     data = 0;
 }
 
-#endif //HW03_LISTNODE_H
+#endif //STUDENTBIRTHDAY_LISTNODE_H

@@ -2,8 +2,8 @@
 // Created by Administrator on 2020/6/15.
 //
 
-#ifndef HW03_STUDENTBIRTHDAY_H
-#define HW03_STUDENTBIRTHDAY_H
+#ifndef STUDENTBIRTHDAY_STUDENTBIRTHDAY_H
+#define STUDENTBIRTHDAY_STUDENTBIRTHDAY_H
 
 #define uint unsigned int
 #define ullong unsigned long long
@@ -54,4 +54,4 @@ public:
 };
 
 
-#endif //HW03_STUDENTBIRTHDAY_H
+#endif //STUDENTBIRTHDAY_STUDENTBIRTHDAY_H

@@ -14,7 +14,6 @@ void printBirth(List<studentBirthday> studentList);
 studentBirthday nextBirthday(List<studentBirthday> studentList);
 
 int main(int argc, char *argv[]) {
-    List<studentBirthday> studentList;
     if (argc != 2)
         printf("空文件\n");
     else {
@@ -25,7 +24,7 @@ int main(int argc, char *argv[]) {
          */
         string filePath = argv[1];
         filePath = replaceString(filePath, "\\", "\\\\");
-        studentList = readText(filePath);
+        List<studentBirthday> studentList = readText(filePath);
         printBirth(studentList);
         cout << "下一个过生日的人是：" << nextBirthday(studentList).getName() << endl;
     }
