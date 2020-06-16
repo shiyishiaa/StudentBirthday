@@ -2,10 +2,10 @@
 // Created by Administrator on 2020/6/15.
 //
 
-#include "studentBirthday.h"
+#include "StudentBirthday.h"
 
-studentBirthday::studentBirthday(string str) {
-    studentBirthday newStudent = parseStudent(move(str));
+StudentBirthday::StudentBirthday(string str) {
+    StudentBirthday newStudent = parseStudent(move(str));
     name = newStudent.name;
     gender = newStudent.gender;
     idNumber = newStudent.idNumber;
@@ -17,8 +17,8 @@ studentBirthday::studentBirthday(string str) {
     mail = newStudent.mail;
 }
 
-studentBirthday studentBirthday::parseStudent(string str) {
-    studentBirthday newStudent;
+StudentBirthday StudentBirthday::parseStudent(string str) {
+    StudentBirthday newStudent;
     // 姓名
     newStudent.name = str.substr(0, str.find(','));
 
@@ -49,7 +49,7 @@ studentBirthday studentBirthday::parseStudent(string str) {
     return newStudent;
 }
 
-studentBirthday::studentBirthday() {
+StudentBirthday::StudentBirthday() {
     name = "";
     gender = false;
     idNumber = 0;
@@ -59,8 +59,8 @@ studentBirthday::studentBirthday() {
     mail = "";
 }
 
-studentBirthday &studentBirthday::operator=(const int &null) {
-    studentBirthday nullStudent;
+StudentBirthday &StudentBirthday::operator=(const int &null) {
+    StudentBirthday nullStudent;
     this->name = nullStudent.name;
     this->gender = nullStudent.gender;
     this->idNumber = nullStudent.idNumber;
@@ -73,7 +73,7 @@ studentBirthday &studentBirthday::operator=(const int &null) {
     return *this;
 }
 
-bool studentBirthday::operator>(const studentBirthday &after) const {
+bool StudentBirthday::operator>(const StudentBirthday &after) const {
     if (this->isEmpty())
         return false;
     else if (after.isEmpty())// The latter is empty while the former is not.
@@ -86,11 +86,11 @@ bool studentBirthday::operator>(const studentBirthday &after) const {
     return this->day > after.day;
 }
 
-bool studentBirthday::operator<(const studentBirthday &after) const {
+bool StudentBirthday::operator<(const StudentBirthday &after) const {
     return !(*this > after || this->isSameDay(after));
 }
 
-bool studentBirthday::operator==(const studentBirthday &another) {
+bool StudentBirthday::operator==(const StudentBirthday &another) {
     return this->name == another.name &&
            this->gender == another.gender &&
            this->idNumber == another.idNumber &&
@@ -102,28 +102,28 @@ bool studentBirthday::operator==(const studentBirthday &another) {
            this->mail == another.mail;
 }
 
-bool studentBirthday::isSameDay(const studentBirthday &another) const {
+bool StudentBirthday::isSameDay(const StudentBirthday &another) const {
     return this->month == another.month && this->day == another.day;
 }
 
-bool studentBirthday::isEmpty() const {
-    auto *emptyStudent = new studentBirthday;
-    return (studentBirthday) *this == *emptyStudent;
+bool StudentBirthday::isEmpty() const {
+    auto *emptyStudent = new StudentBirthday;
+    return (StudentBirthday) *this == *emptyStudent;
 }
 
-string studentBirthday::getName() const {
+string StudentBirthday::getName() const {
     return this->name;
 }
 
-uint studentBirthday::getMonth() const {
+uint StudentBirthday::getMonth() const {
     return this->month;
 }
 
-uint studentBirthday::getDay() const {
+uint StudentBirthday::getDay() const {
     return this->day;
 }
 
-int studentBirthday::daysToBirthday() const {
+int StudentBirthday::daysToBirthday() const {
     if (this->isEmpty())return NULL;
 
     int days;

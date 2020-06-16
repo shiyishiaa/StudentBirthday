@@ -1,17 +1,17 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "studentBirthday.h"
+#include "StudentBirthday.h"
 #include "List.h"
 
 using namespace std;
 using namespace function;
 
-List<studentBirthday> readText(const string &filePath);
+List<StudentBirthday> readText(const string &filePath);
 
-void printBirth(List<studentBirthday> studentList);
+void printBirth(List<StudentBirthday> studentList);
 
-studentBirthday nextBirthday(List<studentBirthday> studentList);
+StudentBirthday nextBirthday(List<StudentBirthday> studentList);
 
 int main(int argc, char *argv[]) {
     if (argc != 2)
@@ -24,20 +24,20 @@ int main(int argc, char *argv[]) {
          */
         string filePath = argv[1];
         filePath = replaceString(filePath, "\\", "\\\\");
-        List<studentBirthday> studentList = readText(filePath);
+        List<StudentBirthday> studentList = readText(filePath);
         printBirth(studentList);
         cout << "下一个过生日的人是：" << nextBirthday(studentList).getName() << endl;
     }
     return 0;
 }
 
-List<studentBirthday> readText(const string &filePath) {
-    List<studentBirthday> studentList;
+List<StudentBirthday> readText(const string &filePath) {
+    List<StudentBirthday> studentList;
     ifstream inFile(filePath);
     if (inFile.is_open()) {
         string nowLine;
         while (getline(inFile, nowLine)) {
-            studentBirthday newStudent(nowLine);
+            StudentBirthday newStudent(nowLine);
             for (uint posi = 1;; posi++) {
                 if (newStudent < studentList[posi - 1]
                     || posi - 1 == studentList.getSize()
@@ -52,16 +52,16 @@ List<studentBirthday> readText(const string &filePath) {
     return studentList;
 }
 
-void printBirth(List<studentBirthday> studentList) {
+void printBirth(List<StudentBirthday> studentList) {
     for (int i = 0; i < studentList.getSize(); i++) {
-        studentBirthday nowStudent = studentList[i];
+        StudentBirthday nowStudent = studentList[i];
         cout << nowStudent.getName() << "的生日是" << nowStudent.getMonth() << "月"
              << nowStudent.getDay() << "日，";
         cout << "还有" << nowStudent.daysToBirthday() << "天" << endl;
     }
 }
 
-studentBirthday nextBirthday(List<studentBirthday> studentList) {
+StudentBirthday nextBirthday(List<StudentBirthday> studentList) {
     int index = -1, minDays = 366;
     for (int i = 0; i < studentList.getSize(); i++) {
         if (studentList[i].daysToBirthday() < minDays) {

@@ -52,7 +52,7 @@ namespace function {
                 phone = phone * 10 + parseDigit(ch);
                 str = str.substr(1);
             } else
-                return NULL;
+                return 0;
         }
         return phone;
     }

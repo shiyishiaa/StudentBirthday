@@ -15,7 +15,7 @@
 using namespace std;
 using namespace function;
 
-class studentBirthday {
+class StudentBirthday {
 private:
     string name;
     bool gender;// male==1, female=0
@@ -26,21 +26,21 @@ private:
     string mail;
 
 public:
-    studentBirthday();
+    StudentBirthday();
 
-    explicit studentBirthday(string str);
+    explicit StudentBirthday(string str);
 
-    static studentBirthday parseStudent(string str);
+    static StudentBirthday parseStudent(string str);
 
-    studentBirthday &operator=(const int &null);
+    StudentBirthday &operator=(const int &null);
 
-    bool operator==(const studentBirthday &another);
+    bool operator==(const StudentBirthday &another);
 
-    bool operator>(const studentBirthday &after) const;
+    bool operator>(const StudentBirthday &after) const;
 
-    bool operator<(const studentBirthday &after) const;
+    bool operator<(const StudentBirthday &after) const;
 
-    bool isSameDay(const studentBirthday &another) const;
+    bool isSameDay(const StudentBirthday &another) const;
 
     bool isEmpty() const;
 
